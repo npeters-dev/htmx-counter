@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        <title>Counter</title>
+        {{template "htmx"}}
+    </head>
+    <body>
+        <h1>Counter</h1>
+        {{template "counter" .Counter}}
+        <form hx-post="/update-counter" hx-swap="none">
+            <input type="number" placeholder="0" name="value"></input>
+            <input type="submit" value="Add"></input>
+        </form>
+        {{template "double" .Double}}
+    </body>
+</html>
+
