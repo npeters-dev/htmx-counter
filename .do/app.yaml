@@ -1,4 +1,0 @@
-name: counter
-services:
-- name: web
-  dockerfile_path: Dockerfile
