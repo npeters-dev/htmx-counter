@@ -10,7 +10,7 @@ RUN go build -o ./build/counter ./main.go
 
 
 ## RUN ######
-FROM ubuntu:latest
+FROM alpine:latest
 
 WORKDIR /app
 COPY --from=build /temp/application/web/build/counter ./
