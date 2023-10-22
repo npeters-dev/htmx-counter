@@ -4,14 +4,22 @@
         <title>Counter</title>
         {{template "htmx"}}
     </head>
-    <body>
+    <body hx-ext="sse" sse-connect="/events">
         <h1>Counter</h1>
-        {{template "counter" .Counter}}
-        <form hx-post="/update-counter" hx-swap="none">
-            <input type="number" placeholder="0" name="value"></input>
-            <input type="submit" value="Add"></input>
+        <h2>Value: {{template "counter" .Counter}}</h2>
+        <h2>Double: {{template "counter" .Double}}</h2>
+        <form hx-post="/counter" hx-swap="none">
+            <label for="value">Add to counter</label>
+            <input type="number" placeholder="0" name="value" value="1" required min="1"/>
+            <input type="submit" value="Add" />
         </form>
-        {{template "double" .Double}}
+        {{template "todos" .Todos}}
+        <form hx-post="/todos" hx-swap="none">
+            <input type="text" name="title" placeholder="Title" value="Todo" required />
+            <input type="submit" value="New Todo" />
+        </form>
+        <button popovertarget="my-popover">Open Popover</button>
+        <div popover id="my-popover">Greetings, one and all!</div>
     </body>
 </html>
 

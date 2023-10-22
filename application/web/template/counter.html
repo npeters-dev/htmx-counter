@@ -1,1 +1,1 @@
-{{define "counter"}}<h2 hx-get="/counter" hx-trigger="update-counter from:body" hx-swap="outerHTML">{{.}}</h2>{{end}}
+{{define "counter"}}<span hx-get="{{.Endpoint}}" hx-trigger="update-counter from:body, sse:update-counter" hx-swap="outerHTML">{{.Value}}</span>{{end}}

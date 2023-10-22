@@ -1,0 +1,8 @@
+{{define "todos"}}<table hx-get="/todos" hx-trigger="update-todos from:body, sse:update-todos" hx-swap="outerHTML">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th></th>
+    </tr>
+    {{range $id, $todo := .}}<tr><td>{{$id}}</td><td>{{$todo.Title}}</td><td><button hx-delete="/todos/{{$id}}" hx-swap="none">Delete</button></td></tr>{{end}}
+</table>{{end}}
