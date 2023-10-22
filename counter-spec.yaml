@@ -1,0 +1,4 @@
+name: sample-dockerfile
+services:
+- name: counter
+  dockerfile_path: Dockerfile
