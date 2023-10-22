@@ -1,4 +1,4 @@
-name: sample-dockerfile
+name: counter
 services:
-- name: counter
+- name: web
   dockerfile_path: Dockerfile
